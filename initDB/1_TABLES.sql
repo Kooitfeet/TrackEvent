@@ -1,30 +1,41 @@
-create table events
+create table Events
 (
     id SERIAL PRIMARY KEY,
-    first_name TEXT not null,
-    last_name TEXT not null,
-    birthdate date null,
-    major_id int null,
-    image bytea null
-);
-
-create table majors
-(
-    id SERIAL PRIMARY KEY,
+    id_orga INT,
     name TEXT not null,
-    description TEXT not null
+    lieu TEXT not null,
+    date date null,
+    description TEXT not null,
+    affiche bytea null
 );
 
-create table courses
+create table Avis
 (
     id SERIAL PRIMARY KEY,
-    name TEXT not null,
-    hours int not null
+    id_part INT,
+    id_event INT,
+    id_orga INT,
+    date date null,
+    description TEXT not null,
+    note INT
 );
 
-create table student_course
+create table Orga
 (
     id SERIAL PRIMARY KEY,
-    student_id int not null,
-    course_id int not null
+    pseudo TEXT not null,
+    mail TEXT not null,
+    entreprise TEXT not null,
+    description TEXT not null,
+    reseaux TEXT not null,
+    affiche bytea null,
+    pdp bytea null
+);
+
+create table Public
+(
+    id SERIAL PRIMARY KEY,
+    pseudo TEXT not null,
+    mail TEXT not null,
+    pdp bytea null
 );
