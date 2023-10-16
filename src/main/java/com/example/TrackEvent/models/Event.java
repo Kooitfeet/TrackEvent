@@ -1,6 +1,18 @@
 package com.example.TrackEvent.models;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Getter;
+
+
+@Entity
+@Table(name = "event")
+@Getter
 public class Event {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long ID;
     private long id_orga;
     private long id_part;
@@ -10,6 +22,9 @@ public class Event {
     private byte affiche;
     private String description;
     private long prix;
+
+    public Event() {
+    }
 
     // Setter
     public void setID(long ID) {
