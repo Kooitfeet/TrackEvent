@@ -1,6 +1,15 @@
 package com.example.TrackEvent.models;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+
+@Entity
+@Table(name = "events")
+@Getter
 public class Orga {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private long id;
     private String pseudo;
     private String mail;
@@ -11,6 +20,10 @@ public class Orga {
     private String reseaux;
     private byte[] Affiche;
     private byte[] pdp;
+
+    public Orga() {
+
+    }
 
     // Setter
     public void setId(long id) {

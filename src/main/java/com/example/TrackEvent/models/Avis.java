@@ -1,6 +1,15 @@
 package com.example.TrackEvent.models;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+
+@Entity
+@Table(name = "avis")
+@Getter
 public class Avis {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private long id;
     private long id_part;
     private long id_event;
@@ -8,6 +17,10 @@ public class Avis {
     private String date;
     private String description;
     private long score;
+
+    public Avis() {
+
+    }
 
     // Setter
 

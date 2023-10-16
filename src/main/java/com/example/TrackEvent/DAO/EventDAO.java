@@ -8,4 +8,6 @@ import java.util.List;
 @Repository
 public interface EventDAO extends JpaRepository<Event, Long> {
     Event findByID(Long id);
+    Event findByName(String name);
+    List<Event> findAll();
 }

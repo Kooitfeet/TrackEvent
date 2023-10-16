@@ -23,7 +23,6 @@ public class Event {
     private String date;
     private int prix;
     private String description;
-    @Column(nullable = true)
     private String affiche;
 
     public Event() {

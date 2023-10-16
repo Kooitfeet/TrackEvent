@@ -1,8 +1,17 @@
 package com.example.TrackEvent.models;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+
 import java.util.Arrays;
 
+@Entity
+@Table(name = "events")
+@Getter
 public class Public {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private long id;
     private String pseudo;
     private String mail;
@@ -11,6 +20,10 @@ public class Public {
     private int score;
     private String Avis;
     private byte[] pdp;
+
+    public Public() {
+
+    }
 
     // Setter
 
