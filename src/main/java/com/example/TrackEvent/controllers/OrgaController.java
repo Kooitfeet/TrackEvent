@@ -17,11 +17,11 @@ import java.util.List;
 public class OrgaController {
     private final OrgaService orgaService;
 
-    @GetMapping("")
+    @GetMapping("/id")
     public Orga getById(long id){
         return orgaService.getbyId(id);
     }
-    @GetMapping("")
+    @GetMapping("/all")
     public List<Orga> getAll(){
         return orgaService.getAll();
     }

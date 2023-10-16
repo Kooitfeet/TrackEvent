@@ -17,11 +17,11 @@ import java.util.List;
 public class PublicController {
     private final PublicService publicService;
 
-    @GetMapping("")
+    @GetMapping("/name")
     public Public getByName(String Name){
         return publicService.getByName(Name);
     }
-    @GetMapping("")
+    @GetMapping("/id")
     public Public getById(long id){
         return publicService.getById(id);
     }

@@ -12,8 +12,8 @@ import lombok.Getter;
 @Getter
 public class Event {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
     private int id_orga;
     private int id_part;
@@ -93,7 +93,7 @@ public class Event {
         return description;
     }
 
-    public long getPrix() {
+    public int getPrix() {
         return prix;
     }
 

@@ -21,4 +21,7 @@ public class EventService {
     public Event getByname(String name){
         return eventDAO.findByName(name);
     }
+    public void addEvent(Event event){
+        eventDAO.save(event);
+    }
 }

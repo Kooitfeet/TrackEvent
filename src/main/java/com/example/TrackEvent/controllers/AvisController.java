@@ -18,11 +18,11 @@ import java.util.List;
 public class AvisController {
     private final AvisService avisService;
 
-    @GetMapping("")
+    @GetMapping("/id")
     public Avis getById(long id){
         return avisService.getById(id);
     }
-    @GetMapping("")
+    @GetMapping("/all")
     public List<Avis> getAll(){
         return avisService.getAll();
     }

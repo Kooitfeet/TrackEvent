@@ -17,15 +17,15 @@ import java.util.List;
 public class EventController {
     private final EventService eventService;
 
-    @GetMapping("")
+    @GetMapping("/id")
     public Event getbyId(Long ID){
         return eventService.getById(ID);
     }
-    @GetMapping("")
+    @GetMapping("/all")
     public List<Event> getAll(){
         return eventService.getAllEvent();
     }
-    @GetMapping("")
+    @GetMapping("/name")
     public Event getByName(String name){
         return eventService.getByname(name);
     }
