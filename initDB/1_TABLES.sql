@@ -2,11 +2,14 @@ create table Events
 (
     id SERIAL PRIMARY KEY,
     id_orga INT,
+    id_part INT,
+    prix INT,
+    theme TEXT not null,
     name TEXT not null,
     lieu TEXT not null,
     date date null,
     description TEXT not null,
-    affiche bytea null
+    affiche TEXT not null
 );
 
 create table Avis

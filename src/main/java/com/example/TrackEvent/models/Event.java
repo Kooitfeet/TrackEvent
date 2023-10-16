@@ -8,58 +8,56 @@ import lombok.Getter;
 
 
 @Entity
-@Table(name = "event")
+@Table(name = "events")
 @Getter
 public class Event {
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ID;
-    private long id_orga;
-    private long id_part;
+    @Id
+    private int ID;
+    private int id_orga;
+    private int id_part;
+    private String name;
     private String theme;
     private String lieu;
     private String date;
-    private byte affiche;
+    private int prix;
     private String description;
-    private long prix;
+    @Column(nullable = true)
+    private String affiche;
 
     public Event() {
     }
 
     // Setter
-    public void setID(long ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
-
-    public void setId_orga(long id_orga) {
-        this.id_orga = id_orga;
-    }
-
-    public void setId_part(long id_part) {
+    public void setId_part(int id_part) {
         this.id_part = id_part;
     }
-
     public void setTheme(String theme) {
         this.theme = theme;
     }
-
     public void setLieu(String lieu) {
         this.lieu = lieu;
     }
-
     public void setDate(String date) {
         this.date = date;
     }
-
-    public void setAffiche(byte affiche) {
+    public void setId_orga(int id_orga) {
+        this.id_orga = id_orga;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setAffiche(String affiche) {
         this.affiche = affiche;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public void setPrix(long prix) {
+    public void setPrix(int prix) {
         this.prix = prix;
     }
 
@@ -88,7 +86,7 @@ public class Event {
         return date;
     }
 
-    public byte getAffiche() {
+    public String getAffiche() {
         return affiche;
     }
 
@@ -100,8 +98,12 @@ public class Event {
         return prix;
     }
 
+    public String getName() {
+        return name;
+    }
+
     // Constructor
-    public Event(long ID, long id_orga, long id_part, String theme, String lieu, String date, byte affiche, String description, long prix) {
+    public Event(int ID, int id_orga, int id_part, String theme, String lieu, String date, String affiche, String description, int prix) {
         this.ID = ID;
         this.id_orga = id_orga;
         this.id_part = id_part;
@@ -111,6 +113,7 @@ public class Event {
         this.affiche = affiche;
         this.description = description;
         this.prix = prix;
+        this.name = name;
     }
 
     // ToString
