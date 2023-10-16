@@ -31,8 +31,8 @@ create table Orga
     entreprise TEXT not null,
     description TEXT not null,
     reseaux TEXT not null,
-    affiche bytea null,
-    pdp bytea null
+    affiche TEXT not null,
+    pdp TEXT not null
 );
 
 create table Public
@@ -40,5 +40,5 @@ create table Public
     id SERIAL PRIMARY KEY,
     pseudo TEXT not null,
     mail TEXT not null,
-    pdp bytea null
+    pdp TEXT not null
 );
