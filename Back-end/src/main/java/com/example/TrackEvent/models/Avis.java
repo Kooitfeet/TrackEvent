@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 @Entity
-@Table(name = "avis")
+@Table(name = "Avis")
 @Getter
 public class Avis {
 
@@ -16,7 +16,7 @@ public class Avis {
     private long id_orga;
     private String date;
     private String description;
-    private long score;
+    private long note;
 
     public Avis() {
 
@@ -48,50 +48,20 @@ public class Avis {
         this.description = description;
     }
 
-    public void setScore(long score) {
-        this.score = score;
-    }
-
-    // Getter
-
-    public long getId() {
-        return id;
-    }
-
-    public long getId_part() {
-        return id_part;
-    }
-
-    public long getId_event() {
-        return id_event;
-    }
-
-    public long getId_orga() {
-        return id_orga;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public long getScore() {
-        return score;
+    public void setScore(long note) {
+        this.note = note;
     }
 
     //Constructor
 
-    public Avis(long id, long id_part, long id_event, long id_orga, String date, String description, long score) {
+    public Avis(long id, long id_part, long id_event, long id_orga, String date, String description, long note) {
         this.id = id;
         this.id_part = id_part;
         this.id_event = id_event;
         this.id_orga = id_orga;
         this.date = date;
         this.description = description;
-        this.score = score;
+        this.note = note;
     }
 
     //ToString
@@ -105,7 +75,7 @@ public class Avis {
                 ", id_orga=" + id_orga +
                 ", date='" + date + '\'' +
                 ", description='" + description + '\'' +
-                ", score=" + score +
+                ", note=" + note +
                 '}';
     }
 }

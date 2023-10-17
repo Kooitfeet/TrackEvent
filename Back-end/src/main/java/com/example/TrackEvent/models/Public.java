@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.util.Arrays;
 
 @Entity
-@Table(name = "events")
+@Table(name = "Public")
 @Getter
 public class Public {
 

@@ -9,5 +9,4 @@ public class BackTrackEventApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BackTrackEventApplication.class, args);
 	}
-
 }

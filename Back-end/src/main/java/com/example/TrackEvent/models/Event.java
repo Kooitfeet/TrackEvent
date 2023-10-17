@@ -8,13 +8,13 @@ import lombok.Getter;
 
 
 @Entity
-@Table(name = "events")
+@Table(name = "Events")
 @Getter
 public class Event {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    private int id;
     private int id_orga;
     private int id_part;
     private String name;
@@ -30,7 +30,7 @@ public class Event {
 
     // Setter
     public void setID(int ID) {
-        this.ID = ID;
+        this.id = ID;
     }
     public void setId_part(int id_part) {
         this.id_part = id_part;
@@ -60,46 +60,6 @@ public class Event {
         this.prix = prix;
     }
 
-    // Getter
-    public long getID() {
-        return ID;
-    }
-
-    public long getId_orga() {
-        return id_orga;
-    }
-
-    public long getId_part() {
-        return id_part;
-    }
-
-    public String getTheme() {
-        return theme;
-    }
-
-    public String getLieu() {
-        return lieu;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getAffiche() {
-        return affiche;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getPrix() {
-        return prix;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     // Constructor
     public Event(int ID, int id_orga, int id_part, String theme, String lieu, String date, String affiche, String description, int prix) {

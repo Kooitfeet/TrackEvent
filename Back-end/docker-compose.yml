@@ -4,8 +4,6 @@ services:
     container_name: trackEvent_database
     image: postgres:latest
     restart: always
-    volumes:
-      - ./pgdata:/var/lib/postgresql/data
     env_file:
       - .env
     environment:

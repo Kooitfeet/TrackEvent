@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 @Entity
-@Table(name = "events")
+@Table(name = "Orga")
 @Getter
 public class Orga {
 

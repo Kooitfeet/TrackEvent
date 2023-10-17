@@ -1,6 +1,6 @@
 -- Pour les events
 INSERT INTO Events (id, id_orga, id_part, prix, theme, name, lieu, date, description, affiche) VALUES (1, 6, 3, 10, 'Tech', 'Organic', 'Paris', '10/12/2023', 'Festival', 'images/affiche/image01.png');
-INSERT INTO Events (id, id_orga, id_part, prix, theme, name, lieu, date, description, affiche) VALUES (2, 4, 2, 10, 'Pop', 'Solidays ', 'Paris', '20/10/2023', 'Festival', 'images/affiche/image01.png');
+INSERT INTO Events (id, id_orga, id_part, prix, theme, name, lieu, date, description, affiche) VALUES (2, 4, 2, 10, 'Pop', 'Solidays ', 'Paris', '10/10/2023', 'Festival', 'images/affiche/image01.png');
 INSERT INTO Events (id, id_orga, id_part, prix, theme, name, lieu, date, description, affiche) VALUES (3, 1, 6, 10, 'Rap', 'Les Ardentes', 'Lille', '08/11/2023', 'Festival', 'images/affiche/image01.png');
 INSERT INTO Events (id, id_orga, id_part, prix, theme, name, lieu, date, description, affiche) VALUES (4, 1, 4, 10, 'Disco', 'Les veilles Charues', 'Reims', '15/09/2023', 'Festival', 'images/affiche/image01.png');
 INSERT INTO Events (id, id_orga, id_part, prix, theme, name, lieu, date, description, affiche) VALUES (5, 5, 5, 10, 'Pop', 'Lollapalooza ', 'Paris', '01/01/2023', 'Festival', 'images/affiche/image01.png');
