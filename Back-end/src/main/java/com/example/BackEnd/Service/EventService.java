@@ -15,4 +15,7 @@ public class EventService {
     public List<Event> getAllEvent(){
         return eventDao.findAll();
     }
+    public Event getEventById(Long id){
+        return eventDao.findByID(id);
+    }
 }
