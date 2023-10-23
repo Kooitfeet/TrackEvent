@@ -21,10 +21,12 @@ public class EventController {
         return eventService.getAllEvent();
     }
 
-    @GetMapping(value = "/events/{id}", produces = "application/json")
+    @GetMapping(value = "/events/id:{id}", produces = "application/json")
     public Event getById(@PathVariable Long id){
-        Event event = eventService.getEventById(id);
-        System.out.println(id);
         return eventService.getEventById(id);
+    }
+    @GetMapping(value = "/events/name:{name}", produces = "application/json")
+    public Event getByName(@PathVariable String name){
+        return eventService.getEventByName(name);
     }
 }

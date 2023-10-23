@@ -18,4 +18,7 @@ public class EventService {
     public Event getEventById(Long id){
         return eventDao.findByID(id);
     }
+    public Event getEventByName(String name){
+        return eventDao.findByName(name);
+    }
 }

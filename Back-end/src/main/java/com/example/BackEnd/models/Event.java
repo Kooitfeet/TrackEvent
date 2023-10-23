@@ -22,6 +22,7 @@ public class Event {
         @JsonProperty("theme")
         private String theme;
         @JsonProperty("name")
+        @Column(name = "name")
         private String name;
         @JsonProperty("lieu")
         private String lieu;
