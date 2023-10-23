@@ -11,4 +11,6 @@ public interface EventDao extends JpaRepository<Event, Long> {
     Event findByID(Long id);
     Event findByName(String name);
     List<Event> findAll();
+    void deleteById(Long id);
+    Event save(Event event);
 }

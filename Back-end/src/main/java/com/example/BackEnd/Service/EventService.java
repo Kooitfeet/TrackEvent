@@ -21,4 +21,10 @@ public class EventService {
     public Event getEventByName(String name){
         return eventDao.findByName(name);
     }
+    public void deleteEventById(Long id){
+        eventDao.deleteById(id);
+    }
+    public void saveEvent(Event event){
+        eventDao.save(event);
+    }
 }
