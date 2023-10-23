@@ -1,18 +1,18 @@
-create table Events
+create table events
 (
     id SERIAL PRIMARY KEY,
     id_orga INT,
     id_part INT,
     prix INT,
-    theme TEXT not null,
     name TEXT not null,
+    theme TEXT not null,
     lieu TEXT not null,
     date date null,
     description TEXT not null,
     affiche TEXT not null
 );
 
-create table Avis
+create table avis
 (
     id SERIAL PRIMARY KEY,
     id_part INT,
@@ -23,9 +23,11 @@ create table Avis
     note INT
 );
 
-create table Orga
+create table orga
 (
     id SERIAL PRIMARY KEY,
+    id_event INT,
+    id_avis INT,
     pseudo TEXT not null,
     mail TEXT not null,
     entreprise TEXT not null,
@@ -35,10 +37,14 @@ create table Orga
     pdp TEXT not null
 );
 
-create table Public
+create table public
 (
     id SERIAL PRIMARY KEY,
+    score int,
     pseudo TEXT not null,
     mail TEXT not null,
+    inter TEXT not null,
+    participe TEXT not null,
+    avis int,
     pdp TEXT not null
 );

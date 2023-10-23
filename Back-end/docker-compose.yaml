@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  database:
+    container_name: trackEvent_database
+    image: postgres:latest
+    restart: always
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER : root
+      POSTGRES_PASSWORD: toor
+      POSTGRES_DB: database_trackEvent
+    ports:
+      - "5432:5432"
