@@ -1,5 +1,6 @@
 package com.example.BackEnd.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -7,15 +8,25 @@ import jakarta.persistence.*;
 public class Orga {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @JsonProperty("id")
     private Long id;
+    @JsonProperty("id_event")
     private long id_event;
-    private long avis;
+    @JsonProperty("avis")
+    private long id_avis;
+    @JsonProperty("pseudo")
     private String pseudo;
+    @JsonProperty("mail")
     private String mail;
+    @JsonProperty("entreprise")
     private String entreprise;
+    @JsonProperty("description")
     private String description;
+    @JsonProperty("reseaux")
     private String reseaux;
+    @JsonProperty("affiche")
     private String affiche;
+    @JsonProperty("pdp")
     private String pdp;
 
     public Orga() {
@@ -23,7 +34,7 @@ public class Orga {
     }
 
     // Setter
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -43,8 +54,8 @@ public class Orga {
         this.id_event = id_event;
     }
 
-    public void setAvis(long avis) {
-        avis = avis;
+    public void setAvis(long id_avis) {
+        id_avis = id_avis;
     }
 
     public void setDescription(String description) {
@@ -64,7 +75,7 @@ public class Orga {
     }
 
     // Getter
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -85,7 +96,7 @@ public class Orga {
     }
 
     public long getAvis() {
-        return avis;
+        return id_avis;
     }
 
     public String getDescription() {
@@ -105,13 +116,13 @@ public class Orga {
     }
 
     // Constructor
-    public Orga(long id, String pseudo, String mail, String entreprise, long id_event, long avis, String description, String reseaux, String affiche, String pdp) {
+    public Orga(Long id, String pseudo, String mail, String entreprise, long id_event, long avis, String description, String reseaux, String affiche, String pdp) {
         this.id = id;
         this.pseudo = pseudo;
         this.mail = mail;
         this.entreprise = entreprise;
         this.id_event = id_event;
-        this.avis = avis;
+        this.id_avis = avis;
         this.description = description;
         this.reseaux = reseaux;
         this.affiche = affiche;
@@ -127,7 +138,7 @@ public class Orga {
                 ", mail='" + mail + '\'' +
                 ", entreprise='" + entreprise + '\'' +
                 ", id_event=" + id_event +
-                ", Avis=" + avis +
+                ", Avis=" + id_avis +
                 ", description='" + description + '\'' +
                 ", reseaux='" + reseaux + '\'' +
                 '}';
