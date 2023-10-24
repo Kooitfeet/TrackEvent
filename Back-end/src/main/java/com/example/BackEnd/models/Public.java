@@ -1,6 +1,7 @@
 package com.example.BackEnd.models;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,13 +10,21 @@ public class Public {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @JsonProperty("id")
     private Long id;
+    @JsonProperty("score")
     private int score;
+    @JsonProperty("pseudo")
     private String pseudo;
+    @JsonProperty("mail")
     private String mail;
+    @JsonProperty("inter")
     private String inter;
+    @JsonProperty("participe")
     private String participe;
+    @JsonProperty("avis")
     private String avis;
+    @JsonProperty("pdp")
     private String pdp;
 
     public Public() {
@@ -24,7 +33,7 @@ public class Public {
 
     // Setter
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -92,7 +101,7 @@ public class Public {
 
     // Constructor
 
-    public Public(long id, String pseudo, String mail, String inter, String participe, int score, String avis, String pdp) {
+    public Public(Long id, String pseudo, String mail, String inter, String participe, int score, String avis, String pdp) {
         this.id = id;
         this.pseudo = pseudo;
         this.mail = mail;
