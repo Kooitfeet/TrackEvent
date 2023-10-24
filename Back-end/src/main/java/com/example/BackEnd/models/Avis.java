@@ -1,5 +1,6 @@
 package com.example.BackEnd.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -10,21 +11,27 @@ public class Avis {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private long id;
+    @JsonProperty("id")
+    private Long id;
+    @JsonProperty("id_orga")
     private long id_orga;
+    @JsonProperty("id_part")
     private long id_part;
+    @JsonProperty("id_event")
     private long id_event;
+    @JsonProperty("date")
     private Date date;
+    @JsonProperty("description")
     private String description;
+    @JsonProperty("note")
     private long note;
 
     public Avis() {
-
     }
 
     // Setter
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -54,7 +61,7 @@ public class Avis {
 
     //Constructor
 
-    public Avis(long id, long id_part, long id_event, long id_orga, Date date, String description, long note) {
+    public Avis(Long id, long id_part, long id_event, long id_orga, Date date, String description, long note) {
         this.id = id;
         this.id_part = id_part;
         this.id_event = id_event;

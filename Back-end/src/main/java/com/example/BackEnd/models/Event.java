@@ -1,15 +1,13 @@
 package com.example.BackEnd.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "events")
 public class Event {
 
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id
         @JsonProperty("id")
         private Long id;
