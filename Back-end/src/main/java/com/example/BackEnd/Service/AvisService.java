@@ -20,6 +20,15 @@ public class AvisService {
     public Optional<Avis> getAvisById(Long id){
         return avisDao.findById(id);
     }
+    public List<Avis> getAvisByOrga(int id_orga){
+        return avisDao.findByOrga(id_orga);
+    }
+    public List<Avis> getAvisByEvent(int id_event){
+        return avisDao.findByEvent(id_event);
+    }
+    public List<Avis> getAvisByPart(int id_part){
+        return avisDao.findByPart(id_part);
+    }
     public void deleteById(Long id){
         avisDao.deleteById(id);
     }

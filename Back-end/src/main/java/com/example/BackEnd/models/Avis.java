@@ -13,12 +13,15 @@ public class Avis {
     @Id
     @JsonProperty("id")
     private Long id;
-    @JsonProperty("id_orga")
-    private long id_orga;
-    @JsonProperty("id_part")
-    private long id_part;
-    @JsonProperty("id_event")
-    private long id_event;
+    @JsonProperty("orga")
+    @Column(name = "orga")
+    private int id_orga;
+    @JsonProperty("part")
+    @Column(name = "part")
+    private int id_part;
+    @JsonProperty("event")
+    @Column(name = "event")
+    private int id_event;
     @JsonProperty("date")
     private Date date;
     @JsonProperty("description")
@@ -35,15 +38,15 @@ public class Avis {
         this.id = id;
     }
 
-    public void setId_part(long id_part) {
+    public void setId_part(int id_part) {
         this.id_part = id_part;
     }
 
-    public void setId_event(long id_event) {
+    public void setId_event(int id_event) {
         this.id_event = id_event;
     }
 
-    public void setId_orga(long id_orga) {
+    public void setId_orga(int id_orga) {
         this.id_orga = id_orga;
     }
 
@@ -61,7 +64,7 @@ public class Avis {
 
     //Constructor
 
-    public Avis(Long id, long id_part, long id_event, long id_orga, Date date, String description, long note) {
+    public Avis(Long id, int id_part, int id_event, int id_orga, Date date, String description, long note) {
         this.id = id;
         this.id_part = id_part;
         this.id_event = id_event;

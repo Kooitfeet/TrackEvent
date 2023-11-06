@@ -14,6 +14,10 @@ findByName:
 ```url
 http://localhost:8080/<model>/name:<name>
 ```
+findById_:
+```url
+http://localhost:8080/<model>/modeldelId:<id_model>
+```
 DeleteById:
 ```url
 http://localhost:8080/<model>/delete:<id>
