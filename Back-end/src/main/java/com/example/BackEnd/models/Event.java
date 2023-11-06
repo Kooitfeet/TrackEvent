@@ -11,10 +11,9 @@ public class Event {
         @Id
         @JsonProperty("id")
         private Long id;
-        @JsonProperty("id_orga")
+        @JsonProperty("orga")
+        @Column(name = "orga")
         private int id_orga;
-        @JsonProperty("id_part")
-        private int id_part;
         @JsonProperty("prix")
         private int prix;
         @JsonProperty("theme")
@@ -37,9 +36,6 @@ public class Event {
     // Setter
         public void setID(Long ID) {
             this.id = ID;
-        }
-        public void setId_part(int id_part) {
-            this.id_part = id_part;
         }
         public void setTheme(String theme) {
             this.theme = theme;
@@ -71,7 +67,6 @@ public class Event {
         public Event(Long id, int id_orga, int id_part, String theme, String lieu, String date, String affiche, String description, int prix) {
             this.id = id;
             this.id_orga = id_orga;
-            this.id_part = id_part;
             this.theme = theme;
             this.lieu = lieu;
             this.date = date;
@@ -88,7 +83,6 @@ public class Event {
             return "Event{" +
                     "ID=" + id +
                     ", id_orga=" + id_orga +
-                    ", id_part=" + id_part +
                     ", theme='" + theme + '\'' +
                     ", lieu='" + lieu + '\'' +
                     ", date='" + date + '\'' +

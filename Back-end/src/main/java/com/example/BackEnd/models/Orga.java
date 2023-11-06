@@ -10,10 +10,6 @@ public class Orga {
     @Id
     @JsonProperty("id")
     private Long id;
-    @JsonProperty("id_event")
-    private long id_event;
-    @JsonProperty("avis")
-    private long id_avis;
     @JsonProperty("pseudo")
     private String pseudo;
     @JsonProperty("mail")
@@ -48,10 +44,6 @@ public class Orga {
 
     public void setEntreprise(String entreprise) {
         this.entreprise = entreprise;
-    }
-
-    public void setId_event(long id_event) {
-        this.id_event = id_event;
     }
 
     public void setAvis(long id_avis) {
@@ -91,14 +83,6 @@ public class Orga {
         return entreprise;
     }
 
-    public long getId_event() {
-        return id_event;
-    }
-
-    public long getAvis() {
-        return id_avis;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -121,8 +105,6 @@ public class Orga {
         this.pseudo = pseudo;
         this.mail = mail;
         this.entreprise = entreprise;
-        this.id_event = id_event;
-        this.id_avis = avis;
         this.description = description;
         this.reseaux = reseaux;
         this.affiche = affiche;
@@ -137,8 +119,6 @@ public class Orga {
                 ", pseudo='" + pseudo + '\'' +
                 ", mail='" + mail + '\'' +
                 ", entreprise='" + entreprise + '\'' +
-                ", id_event=" + id_event +
-                ", Avis=" + id_avis +
                 ", description='" + description + '\'' +
                 ", reseaux='" + reseaux + '\'' +
                 '}';

@@ -4,6 +4,8 @@ package com.example.BackEnd.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "public")
 public class Public {
@@ -21,7 +23,7 @@ public class Public {
     @JsonProperty("inter")
     private String inter;
     @JsonProperty("participe")
-    private String participe;
+    private List<Integer> participe;
     @JsonProperty("avis")
     private String avis;
     @JsonProperty("pdp")
@@ -49,7 +51,7 @@ public class Public {
         this.inter = inter;
     }
 
-    public void setParticipe(String participe) {
+    public void setParticipe(List<Integer> participe) {
         this.participe = participe;
     }
 
@@ -83,7 +85,7 @@ public class Public {
         return inter;
     }
 
-    public String getParticipe() {
+    public List<Integer> getParticipe() {
         return participe;
     }
 
@@ -101,7 +103,7 @@ public class Public {
 
     // Constructor
 
-    public Public(Long id, String pseudo, String mail, String inter, String participe, int score, String avis, String pdp) {
+    public Public(Long id, String pseudo, String mail, String inter, List<Integer> participe, int score, String avis, String pdp) {
         this.id = id;
         this.pseudo = pseudo;
         this.mail = mail;

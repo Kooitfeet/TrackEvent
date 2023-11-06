@@ -1,8 +1,7 @@
 create table events
 (
     id SERIAL PRIMARY KEY,
-    id_orga INT,
-    id_part INT,
+    orga INT,
     prix INT,
     name TEXT not null,
     theme TEXT not null,
@@ -15,9 +14,9 @@ create table events
 create table avis
 (
     id SERIAL PRIMARY KEY,
-    id_part INT,
-    id_event INT,
-    id_orga INT,
+    part INT,
+    event INT,
+    orga INT,
     date date null,
     description TEXT not null,
     note INT
@@ -26,8 +25,6 @@ create table avis
 create table orga
 (
     id SERIAL PRIMARY KEY,
-    id_event INT,
-    id_avis INT,
     pseudo TEXT not null,
     mail TEXT not null,
     entreprise TEXT not null,
@@ -44,7 +41,7 @@ create table public
     pseudo TEXT not null,
     mail TEXT not null,
     inter TEXT not null,
-    participe TEXT not null,
+    participe int,
     avis int,
     pdp TEXT not null
 );

@@ -18,6 +18,9 @@ public class EventService {
     public Event getEventById(Long id){
         return eventDao.findByID(id);
     }
+    public List<Event> getEventbuIdOrga(int id_orga){
+        return eventDao.findByOrga(id_orga);
+    }
     public Event getEventByName(String name){
         return eventDao.findByName(name);
     }

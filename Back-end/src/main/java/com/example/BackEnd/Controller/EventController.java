@@ -24,14 +24,22 @@ public class EventController {
     public Event getById(@PathVariable Long id){
         return eventService.getEventById(id);
     }
+
+    @GetMapping(value = "/events/orga:{id_orga}", produces = "application/json")
+    public List<Event> getbyIdOrga(@PathVariable int id_orga){
+        return eventService.getEventbuIdOrga(id_orga);
+    }
+
     @GetMapping(value = "/events/name:{name}", produces = "application/json")
     public Event getByName(@PathVariable String name){
         return eventService.getEventByName(name);
     }
+
     @GetMapping(value = "/events/delete:{id}", produces = "application/json")
     public void deleteEventById(@PathVariable Long id){
         eventService.deleteEventById(id);
     }
+
     @PostMapping(value = "/events/save", produces = "application/json")
     public void saveEventById(@ModelAttribute Event event){
         eventService.saveEvent(event);
