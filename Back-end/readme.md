@@ -29,15 +29,15 @@ http://localhost:8080/<model>/save
 
 ### Base SQL
 #### Avis
-Avis relié à un event ou à un Orga (chose concerné)
-Si l'avis est pour Event, Orga sera alors à 0
+Avis relié à un event ou à un OrgaModel (chose concerné)
+Si l'avis est pour Event, OrgaModel sera alors à 0
 Avis est relié à un participant
 
 #### Event
 Event est relié à un orga
 
-#### Orga
-Orga n'est pas relié aux autres
+#### OrgaModel
+OrgaModel n'est pas relié aux autres
 
 #### Public
 L'id des events se trouve dans la colonne "participes" qui est une liste d'entier
