@@ -1,0 +1,64 @@
+p, h1, h2, h3, h4, span {
+  color: var(--text-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main{
+  display: flex;
+}
+
+.card-section{
+  margin: 1rem;
+}
+
+.card {
+  width: var(--card-width);
+  border: solid 2px rgba(170, 170, 170, 0.2);
+  margin:auto;
+}
+
+.resize {
+  width: 100%;
+  height: auto;
+}
+
+.rounded {
+  border-radius: 15px;
+}
+
+h1 {
+  margin: 0.5rem;
+  color: white;
+}
+
+.music-card {
+  display:inline-block;
+  border-radius: 15px;
+  text-align: center;
+  border: solid 2px rgb(170, 170, 170);
+  padding: 5px 10px;
+  margin-top: 0px;
+  margin-bottom:0px;
+}
+
+.localisation{
+  color: rgb(165, 165, 165);
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.date{
+  color: rgb(245, 85, 85);
+}
+
+.inherit-color{
+  color: inherit;
+}
+.card-margin{
+  margin: 0.5rem;
+}
+
+.no-margin{
+  margin: 0;
+}

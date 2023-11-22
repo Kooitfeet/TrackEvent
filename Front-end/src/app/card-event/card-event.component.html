@@ -1,0 +1,15 @@
+<div class="card rounded">
+  <a class="no-margin" [routerLink]="['/event', id]">
+  <img class= "resize rounded" src="../assets/posters/organik-affiche.jpg" alt="Affiche">
+  </a>
+    <div class="card-margin">
+    <h1>{{name}}</h1>
+      <a class="localisation Link" [routerLink]="['/organizer', id]">Par <span class="uppercase large_white">{{name_orga}}</span></a>
+    <p class="localisation uppercase">{{lieu}}</p>
+    <p class="date uppercase"><span class="inherit-color">{{date}}</span> | <span class="inherit-color">23h00-7h00</span></p>
+    <div>
+      <p class="music-card">{{theme}}</p>
+    </div>
+  </div>
+</div>
+

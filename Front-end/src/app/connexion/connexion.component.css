@@ -1,0 +1,80 @@
+.form-container {
+  background-color: var(--main-color);
+  padding: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form{
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  color: var(--text-color);
+  font-weight: bold;
+  transition-duration: 0.3s;
+}
+
+.tab-button:hover {
+  color: var(--element-color);
+}
+
+.tab-content {
+  text-align: left;
+}
+
+#login-content {
+  display: block;
+}
+
+h2 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  color: var(--text-color);
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  border-color: var(--border-color)
+}
+
+button.primary-button {
+  background-color: var(--element-color);
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button.primary-button:hover {
+  background-color: var(--hover-color);
+  transition-duration: 0.3s;
+  color: white
+}

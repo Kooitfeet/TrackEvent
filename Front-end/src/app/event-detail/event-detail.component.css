@@ -1,0 +1,62 @@
+p{
+  font-size: 1.5rem;
+  display:inline-block;
+}
+
+.event-detail-content{
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.resize {
+  display: block;
+  margin: auto;
+  margin-top: 3rem;
+  width: 60rem;
+  max-width: var(--max-width);
+  height: auto;
+}
+
+.rounded {
+  border-radius: 15px;
+}
+
+.center{
+  margin:auto;
+  text-align: center;
+}
+
+.event-title{
+  font-family: font-logo;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.title{
+  font-family: font-logo;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.event-description{
+}
+
+.event-information{
+}
+
+.event-planner{
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card {
+  display: block;
+  border: solid 2px rgba(170, 170, 170, 0.2);
+  box-sizing: content-box;
+  margin:auto;
+}
+
+.rounded {
+  border-radius: 15px;
+}

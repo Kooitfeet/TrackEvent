@@ -1,0 +1,33 @@
+<div class="form-container">
+  <div class="tabs">
+    <button class="tab-button primary-button" id="login-tab" (click)="toggleTab('login')">Connexion</button>
+    <button class="tab-button primary-button" id="register-tab" (click)="toggleTab('register')">S'inscrire</button>
+  </div>
+  <div class="tab-content" id="login-content" *ngIf="isLoginTab">
+    <form>
+      <h2>Connexion</h2>
+
+      <label for="login-username">Nom d'utilisateur :</label>
+      <input #loginUsernameInput type="text" id="login-username" class= "input-nav" name="login-username" placeholder="Nom d'utilisateur" required>
+
+      <label for="login-password">Mot de passe :</label>
+      <input type="password" id="login-password" class= "input-nav" name="login-password" placeholder="Mot de passe" required>
+
+      <button class="primary-button" (click)="Login()">Se connecter</button>
+    </form>
+  </div>
+  <div class="tab-content" id="register-content" *ngIf="!isLoginTab">
+    <form>
+      <h2>Inscription</h2>
+
+      <label for="register-username">Nom d'utilisateur :</label>
+      <input type="text" id="register-username" class= "input-nav" name="register-username" placeholder="Nom d'utilisateur" required>
+
+      <label for="register-password">Mot de passe :</label>
+      <input type="password" id="register-password" class= "input-nav" name="register-password" placeholder="Mot de passe" required>
+
+      <button class="primary-button">S'inscrire</button>
+    </form>
+  </div>
+
+

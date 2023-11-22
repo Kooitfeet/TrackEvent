@@ -1,0 +1,37 @@
+.round-button {
+  background-color: var(--second-color);
+  border: none;
+  border-radius: 50%;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.round-button.clicked {
+  background-color: red;
+}
+
+.round-button:hover {
+  background-color: var(--hover-color);
+}
+
+.column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boutons-section {
+  position: absolute;
+  top: 50%;
+  transform: translate(-150%, -50%);
+
+}
+
+.element{
+  position: relative;
+  margin: 1rem;
+}

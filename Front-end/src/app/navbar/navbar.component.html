@@ -1,0 +1,14 @@
+<div class="navbar">
+  <a class="app-name" routerLink="">TrackEvent</a>
+  <div class="user-input">
+    <input type="text" id="user-input" class="input-nav" placeholder="Rechercher...">
+  </div>
+  <nav>
+    <ul>
+      <li *ngIf="isConnected"><a routerLink="">Amis</a></li>
+      <li *ngIf="isConnected"><a routerLink="myevents">Mes Events</a></li>
+      <li *ngIf="!isConnected"><a class = "active" routerLink="connexion">Connexion / Inscription</a></li>
+      <li *ngIf="isConnected"><a class = "active">Bienvenue {{username}} !</a></li>
+    </ul>
+  </nav>
+</div>
