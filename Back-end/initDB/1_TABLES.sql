@@ -31,6 +31,7 @@ create table orga
     description TEXT not null,
     reseaux TEXT not null,
     affiche TEXT not null,
+    organise INT[],
     pdp TEXT not null
 );
 
@@ -40,8 +41,8 @@ create table public
     score int,
     pseudo TEXT not null,
     mail TEXT not null,
-    inter TEXT not null,
-    participe int,
+    inter INT[],
+    participe INT[],
     avis int,
     pdp TEXT not null
 );

@@ -3,10 +3,7 @@ package com.example.BackEnd.Controller;
 import com.example.BackEnd.Service.PublicService;
 import com.example.BackEnd.models.Public;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,6 +26,10 @@ public class PublicController {
     public Public getByPseudo(@PathVariable String pseudo){
         return publicService.getByPseudo(pseudo);
     }
+    @GetMapping(value = "/public/mail:{mail}", produces = "application/json")
+    public Public getByEmail(@PathVariable String mail){
+        return publicService.getByEmail(mail);
+    }
     @GetMapping(value = "/public/delete:{id}", produces = "application/json")
     public void deleteById(@PathVariable Long id){
         publicService.deleteOrga(id);
@@ -36,5 +37,9 @@ public class PublicController {
     @GetMapping(value = "/public/save", produces = "application/json")
     public Public saveOrga(Public pub){
         return publicService.saveOrga(pub);
+    }
+    @GetMapping(value = "/public/updateList", produces = "application/json")
+    public void updateListParticipe(@RequestParam Long id, @RequestParam List<Integer> list){
+        publicService.updateListParticipe(id, list);
     }
 }

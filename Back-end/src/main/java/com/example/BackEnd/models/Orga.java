@@ -3,6 +3,9 @@ package com.example.BackEnd.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "orga")
 public class Orga {
@@ -22,11 +25,13 @@ public class Orga {
     private String reseaux;
     @JsonProperty("affiche")
     private String affiche;
+    @JsonProperty("organise")
+    private List<Integer> organise;
     @JsonProperty("pdp")
     private String pdp;
 
     public Orga() {
-
+        organise = new ArrayList<>();
     }
 
     // Setter
@@ -62,6 +67,10 @@ public class Orga {
         affiche = affiche;
     }
 
+    public void setOrganise(List<Integer> organise) {
+        this.organise = organise;
+    }
+
     public void setPdp(String pdp) {
         this.pdp = pdp;
     }
@@ -95,12 +104,16 @@ public class Orga {
         return affiche;
     }
 
+    public List<Integer> getOrganise() {
+        return organise;
+    }
+
     public String getPdp() {
         return pdp;
     }
 
     // Constructor
-    public Orga(Long id, String pseudo, String mail, String entreprise, long id_event, long avis, String description, String reseaux, String affiche, String pdp) {
+    public Orga(Long id, String pseudo, String mail, String entreprise, long id_event, long avis, String description, String reseaux, String affiche, List<Integer> organise, String pdp) {
         this.id = id;
         this.pseudo = pseudo;
         this.mail = mail;
@@ -108,6 +121,7 @@ public class Orga {
         this.description = description;
         this.reseaux = reseaux;
         this.affiche = affiche;
+        this.organise = organise;
         this.pdp = pdp;
     }
 
@@ -120,6 +134,7 @@ public class Orga {
                 ", mail='" + mail + '\'' +
                 ", entreprise='" + entreprise + '\'' +
                 ", description='" + description + '\'' +
+                ", organise='" + organise + '\'' +
                 ", reseaux='" + reseaux + '\'' +
                 '}';
     }

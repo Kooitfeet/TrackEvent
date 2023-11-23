@@ -21,7 +21,7 @@ public class Public {
     @JsonProperty("mail")
     private String mail;
     @JsonProperty("inter")
-    private String inter;
+    private List<Integer> inter;
     @JsonProperty("participe")
     private List<Integer> participe;
     @JsonProperty("avis")
@@ -47,7 +47,7 @@ public class Public {
         this.mail = mail;
     }
 
-    public void setInter(String inter) {
+    public void setInter(List<Integer> inter) {
         this.inter = inter;
     }
 
@@ -81,7 +81,7 @@ public class Public {
         return mail;
     }
 
-    public String getInter() {
+    public List<Integer> getInter() {
         return inter;
     }
 
@@ -103,7 +103,7 @@ public class Public {
 
     // Constructor
 
-    public Public(Long id, String pseudo, String mail, String inter, List<Integer> participe, int score, String avis, String pdp) {
+    public Public(Long id, String pseudo, String mail, List<Integer> inter, List<Integer> participe, int score, String avis, String pdp) {
         this.id = id;
         this.pseudo = pseudo;
         this.mail = mail;

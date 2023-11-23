@@ -16,17 +16,17 @@ INSERT INTO avis (id, orga, part, event, date, description, note) VALUES (5, 0, 
 INSERT INTO avis (id, orga, part, event, date, description, note) VALUES (6, 0, 5, 1, '10/02/2023', 'A refaire !', 10);
 
 -- Pour les orgas
-INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, pdp) VALUES (1, 'michou', 'michou@gmail.com', 'michouSARL', 'SARL du Raps', 'site-web-michou.com', 'lien-image', 'lien-pdp');
-INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, pdp) VALUES (2, 'michel', 'michel@gmail.com', 'michelSARL', 'SARL du Disco', 'site-web-michel.com', 'lien-image', 'lien-pdp');
-INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, pdp) VALUES (3, 'fifi', 'fifi@gmail.com', 'fifiSARL', 'fifi company', 'site-web-fifi.com', 'lien-image', 'lien-pdp');
-INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, pdp) VALUES (4, 'GuiDev', 'GuiDev@gmail.com', 'GuiDev', 'SARL du kiff', 'site-web-GuiDev.com', 'lien-image', 'lien-pdp');
-INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, pdp) VALUES (5, 'Vivi', 'Vivi@gmail.com', 'ViviSARL', 'SARL de Vivi', 'site-web-Vivi.com', 'lien-image', 'lien-pdp');
-INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, pdp) VALUES (6, 'Lou', 'Lou@gmail.com', 'LouSARL', 'SARL du Lou', 'site-web-Lou.com', 'lien-image', 'lien-pdp');
+INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, organise, pdp) VALUES (1, 'michou', 'michou@gmail.com', 'michouSARL', 'SARL du Raps', 'site-web-michou.com', 'lien-image', ARRAY[1, 6, 5], 'lien-pdp');
+INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, organise, pdp) VALUES (2, 'michel', 'michel@gmail.com', 'michelSARL', 'SARL du Disco', 'site-web-michel.com', 'lien-image', ARRAY[1, 6, 5], 'lien-pdp');
+INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, organise, pdp) VALUES (3, 'fifi', 'fifi@gmail.com', 'fifiSARL', 'fifi company', 'site-web-fifi.com', 'lien-image', ARRAY[1, 6, 5], 'lien-pdp');
+INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, organise, pdp) VALUES (4, 'GuiDev', 'GuiDev@gmail.com', 'GuiDev', 'SARL du kiff', 'site-web-GuiDev.com', 'lien-image', ARRAY[1, 6, 5], 'lien-pdp');
+INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, organise, pdp) VALUES (5, 'Vivi', 'Vivi@gmail.com', 'ViviSARL', 'SARL de Vivi', 'site-web-Vivi.com', 'lien-image', ARRAY[1, 6, 5], 'lien-pdp');
+INSERT INTO orga (id, pseudo, mail, entreprise, description, reseaux, affiche, organise, pdp) VALUES (6, 'Lou', 'Lou@gmail.com', 'LouSARL', 'SARL du Lou', 'site-web-Lou.com', 'lien-image', ARRAY[1, 6, 5], 'lien-pdp');
 
 -- Pour les publics
-INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (1, 10, 'Lucas', 'lucas@gmail.com', 'solidays', 4, 4, 'lien-pdp');
-INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (2, 10, 'Bertrand', 'Bertrand@gmail.com', 'solidays', 4, 5, 'lien-pdp');
-INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (3, 10, 'Vincent', 'Vincent@gmail.com', 'solidays', 4, 1, 'lien-pdp');
-INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (4, 10, 'Julie', 'julie@gmail.com', 'solidays', 4, 4, 'lien-pdp');
-INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (5, 10, 'Alizée', 'Alizée@gmail.com', 'solidays', 4, 1, 'lien-pdp');
-INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (6, 10, 'Florent', 'Florent@gmail.com', 'solidays', 4, 5, 'lien-pdp');
+INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (1, 10, 'Lucas', 'lucas@gmail.com', ARRAY[1, 6, 5], ARRAY[1, 6, 5], 4, 'lien-pdp');
+INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (2, 10, 'Bertrand', 'Bertrand@gmail.com', ARRAY[1, 6, 5], ARRAY[1, 6, 5], 5, 'lien-pdp');
+INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (3, 10, 'Vincent', 'Vincent@gmail.com', ARRAY[1, 6, 5], ARRAY[1, 6, 5], 1, 'lien-pdp');
+INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (4, 10, 'Julie', 'julie@gmail.com', ARRAY[1, 6, 5], ARRAY[1, 6, 5], 4, 'lien-pdp');
+INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (5, 10, 'Alizée', 'Alizée@gmail.com', ARRAY[1, 6, 5], ARRAY[1, 6, 5], 1, 'lien-pdp');
+INSERT INTO public (id, score, pseudo, mail, inter, participe, avis, pdp) VALUES (6, 10, 'Florent', 'Florent@gmail.com', ARRAY[1, 6, 5], ARRAY[1, 6, 5], 5, 'lien-pdp');
