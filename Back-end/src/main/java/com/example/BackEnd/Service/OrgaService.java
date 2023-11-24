@@ -22,10 +22,16 @@ public class OrgaService {
     public Orga getByPseudo(String pseudo){
         return orgaDao.findByPseudo(pseudo);
     }
+    public Orga getByMail(String orga){
+        return orgaDao.findByMail(orga);
+    }
     public void deleteOrga(Long id){
         orgaDao.deleteById(id);
     }
     public Orga saveOrga(Orga orga){
         return orgaDao.save(orga);
+    }
+    public void updateList(Long id, List<Integer> newList){
+        orgaDao.updateOrganise(id, newList);
     }
 }
