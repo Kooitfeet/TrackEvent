@@ -1,7 +1,7 @@
 .round-button {
   background-color: var(--second-color);
   border: none;
-  border-radius: 50%;
+  border-radius: 1rem;
   color: var(--text-color);
   cursor: pointer;
   font-size: 16px;
@@ -10,10 +10,8 @@
   transition: background-color 0.3s ease;
 }
 
-
-
-.round-button:hover {
-  background-color: var(--hover-color);
+.round-button:hover{
+  background-color: grey;
 }
 
 .column-center {

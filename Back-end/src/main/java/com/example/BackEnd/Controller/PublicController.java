@@ -34,8 +34,8 @@ public class PublicController {
     public void deleteById(@PathVariable Long id){
         publicService.deleteOrga(id);
     }
-    @GetMapping(value = "/public/save", produces = "application/json")
-    public Public saveOrga(Public pub){
+    @PostMapping(value = "/public/save", produces = "application/json")
+    public Public saveOrga(@RequestBody Public pub){
         return publicService.saveOrga(pub);
     }
     @GetMapping(value = "/public/updateList", produces = "application/json")

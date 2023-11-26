@@ -1,5 +1,5 @@
 export interface Event {
-  id: number;
+  id?: number;
   orga: number;
   id_part: number;
   name: string;

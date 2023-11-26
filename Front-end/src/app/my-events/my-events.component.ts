@@ -15,59 +15,41 @@ export class MyEventsComponent {
 
   eventParticipate$: BehaviorSubject<Event[]> = new BehaviorSubject<Event[]>([]);
   eventsIDs: number[]= [];
+  ID = -1;
   constructor(private _route: ActivatedRoute, private eventService: EventService, private publicService: PublicService) {}
 
   ngOnInit() {
-    this.publicService.findById(2).subscribe((data) => {
-      this.eventsIDs = data.participe;
-      this.eventService.findMultipleByIds(this.eventsIDs).subscribe((events: Event[]) => {
-        this.eventParticipate$.next(events);
-      });
-    });
+    this.LoadEvents();
   }
-  ButtonParticipate(event: MouseEvent, id: number) {
+
+  LoadEvents(){
+    const storedUserId = localStorage.getItem('id');
+    if (storedUserId) {
+      this.ID = parseInt(storedUserId, 10); // Convertir la chaîne en nombre
+      this.publicService.findById(this.ID).subscribe((data) => {
+        this.eventsIDs = data.participe;
+        this.eventService.findMultipleByIds(this.eventsIDs).subscribe((events: Event[]) => {
+          this.eventParticipate$.next(events);
+        });
+      });
+    }
+  }
+  ButtonParticipate(event: MouseEvent, id: number | undefined) {
     const buttonElement = event.currentTarget as HTMLButtonElement;
-    if (buttonElement) { //Supprime des favoris
-      if (buttonElement.style.backgroundColor === 'red') {
+    if (buttonElement && id) { //Supprime des favoris
+
         buttonElement.style.backgroundColor = 'grey';
         let newListParticipate = this.eventsIDs;
-        newListParticipate.push(id)
         const indexASupprimer = newListParticipate.indexOf(id);
         if (indexASupprimer !== -1) {
           newListParticipate.splice(indexASupprimer, 1);
         }
-        this.publicService.updateListParticipe(id, newListParticipate).subscribe((data) => {
+        this.publicService.updateListParticipe(this.ID, newListParticipate).subscribe((data) => {
           console.log("Suppression participe");
           this.eventsIDs = newListParticipate
+          console.log(newListParticipate)
+          this.LoadEvents();
         });
-
-      }
-      else { //Ajoute aux favoris
-        buttonElement.style.backgroundColor = 'red';
-        let newListParticipate = this.eventsIDs;
-        newListParticipate.push(id)
-        this.publicService.updateListParticipe(id, newListParticipate).subscribe((data) => {
-          console.log("Ajout participe");
-          this.eventsIDs = newListParticipate
-        });
-      }
-    }
-  }
-
-  ButtonLike(event: MouseEvent) {
-    const buttonElement = event.currentTarget as HTMLButtonElement;
-
-    if (buttonElement) {
-      if (buttonElement.style.backgroundColor === 'red') {
-        buttonElement.style.backgroundColor = 'grey';
-      } else {
-        buttonElement.style.backgroundColor = 'red';
-        console.log("test requête")
-
-
-
-
-      }
     }
   }
 

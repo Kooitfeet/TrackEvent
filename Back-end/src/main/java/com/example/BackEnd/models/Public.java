@@ -10,8 +10,8 @@ import java.util.List;
 @Table(name = "public")
 public class Public {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonProperty("id")
     private Long id;
     @JsonProperty("score")
@@ -25,7 +25,7 @@ public class Public {
     @JsonProperty("participe")
     private List<Integer> participe;
     @JsonProperty("avis")
-    private String avis;
+    private int avis;
     @JsonProperty("pdp")
     private String pdp;
 
@@ -59,7 +59,7 @@ public class Public {
         this.score = score;
     }
 
-    public void setAvis(String avis) {
+    public void setAvis(int avis) {
         this.avis = avis;
     }
 
@@ -93,7 +93,7 @@ public class Public {
         return score;
     }
 
-    public String getAvis() {
+    public int getAvis() {
         return avis;
     }
 
@@ -103,7 +103,7 @@ public class Public {
 
     // Constructor
 
-    public Public(Long id, String pseudo, String mail, List<Integer> inter, List<Integer> participe, int score, String avis, String pdp) {
+    public Public(Long id, String pseudo, String mail, List<Integer> inter, List<Integer> participe, int score, int avis, String pdp) {
         this.id = id;
         this.pseudo = pseudo;
         this.mail = mail;

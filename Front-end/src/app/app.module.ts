@@ -10,8 +10,8 @@ import { CardEventComponent } from './card-event/card-event.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { OrganizerProfileComponent } from './organizer-profile/organizer-profile.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { LoginHomeComponent } from './login-home/login-home.component';
 import { MyEventsComponent } from './my-events/my-events.component';
+import { AddEventComponent } from './add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +22,8 @@ import { MyEventsComponent } from './my-events/my-events.component';
     CardEventComponent,
     EventDetailComponent,
     OrganizerProfileComponent,
-    LoginHomeComponent,
-    MyEventsComponent
+    MyEventsComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,

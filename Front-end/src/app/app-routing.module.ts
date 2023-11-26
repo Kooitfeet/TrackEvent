@@ -7,8 +7,8 @@ import {CardEventComponent} from "./card-event/card-event.component";
 import {EventDetailComponent} from "./event-detail/event-detail.component";
 import {OrganizerProfileComponent} from "./organizer-profile/organizer-profile.component";
 import {EventResolver} from "./home-events/event.resolver";
-import {LoginHomeComponent} from "./login-home/login-home.component";
 import {MyEventsComponent} from "./my-events/my-events.component";
+import {AddEventComponent} from "./add-event/add-event.component";
 
 const routes: Routes = [
 
@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: 'connexion', component: ConnexionComponent },
   { path: 'card-event', component: CardEventComponent},
   { path: 'event/:id', component: EventDetailComponent },
-  { path: 'login/:username', component: LoginHomeComponent },
   { path: '', component: HomeEventsComponent,
     resolve:
       {
@@ -25,6 +24,8 @@ const routes: Routes = [
   },
   { path: 'organizer/:id', component: OrganizerProfileComponent },
   { path: 'myevents', component: MyEventsComponent },
+  { path: 'addevent', component: AddEventComponent },
+
 ];
 
 

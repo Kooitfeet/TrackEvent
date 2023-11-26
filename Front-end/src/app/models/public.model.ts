@@ -1,11 +1,11 @@
 export interface Public {
-  id: number;
+  id?: number;
   score: number;
   pseudo: string;
   mail: string;
   inter: number[];
   participe: number[];
-  avis: string;
+  avis: number;
   pdp: string;
 }
 

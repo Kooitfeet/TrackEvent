@@ -18,6 +18,15 @@ export class PublicService {
   }
 
   updateListParticipe(id: number, list: number[]){
-    return this.http.get<Public>(this.backendUrl + `/public/updateList:${id}&list=${list.join(',')}`);
+    return this.http.get<Public>(this.backendUrl + `/public/updateList?id=${id}&list=${list.join(',')}`);
+  }
+
+
+  findByPseudo = (pseudo: string) => {
+    return this.http.get<Public>(this.backendUrl + `/public/pseudo:${pseudo}`);
+  }
+
+  addPublic(profil: Public){
+    return this.http.post<Public>(this.backendUrl  + '/public/save', profil);
   }
 }

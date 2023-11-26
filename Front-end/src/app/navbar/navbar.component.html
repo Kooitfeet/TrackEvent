@@ -5,10 +5,12 @@
   </div>
   <nav>
     <ul>
-      <li *ngIf="isConnected"><a routerLink="">Amis</a></li>
-      <li *ngIf="isConnected"><a routerLink="myevents">Mes Events</a></li>
-      <li *ngIf="!isConnected"><a class = "active" routerLink="connexion">Connexion / Inscription</a></li>
-      <li *ngIf="isConnected"><a class = "active">Bienvenue {{username}} !</a></li>
+      <li *ngIf="orga == true"><a routerLink="addevent">Créer un évènement</a></li>
+      <li *ngIf="username !== ''"><a routerLink="myevents">Mes Events</a></li>
+      <li *ngIf="username == ''"><a class = "active" routerLink="connexion">Connexion / Inscription</a></li>
+
+      <li *ngIf="username !== ''"><a class = "active">Bienvenue {{username}} !</a></li>
+      <li *ngIf="username !== ''" ><a class="logout" (click)="Logout()">Déconnexion</a></li>
     </ul>
   </nav>
 </div>

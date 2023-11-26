@@ -1,5 +1,5 @@
 export interface Orga {
-  id: number;
+  id?: number;
   pseudo: string;
   mail: string;
   entreprise: string;

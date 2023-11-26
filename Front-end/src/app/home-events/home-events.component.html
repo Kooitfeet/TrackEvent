@@ -2,7 +2,7 @@
 
 <h1>Évènements plus populaires</h1>
 <div class="card-grid">
-  <app-card-event *ngFor="let event of eventList$ | async"  [id]=event.id [lieu]=event.lieu [theme]=event.theme [id_orga]=event.orga [name]=event.name [prix]="event.prix"></app-card-event>
+  <app-card-event *ngFor="let event of eventList$ | async"  [id]="event.id !== undefined ? event.id :0" [lieu]=event.lieu [theme]=event.theme [id_orga]=event.orga [name]=event.name [prix]="event.prix"></app-card-event>
 </div>
 
   <button (click)="afficherPlus()">Afficher plus</button>
