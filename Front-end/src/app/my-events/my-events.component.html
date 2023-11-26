@@ -2,10 +2,10 @@
 
   <div class="column-center">
     <h1>My Events</h1>
-    <ng-container *ngFor="let event of eventList$ | async">
+    <ng-container *ngFor="let event of eventParticipate$ | async">
       <div class="element">
         <div class="boutons-section">
-          <button class="round-button" (click)="ButtonParticipate($event)"></button>
+          <button class="round-button" (click)="ButtonParticipate($event,event.id)"></button>
           <button class="round-button" (click)="ButtonLike($event)"></button>
         </div>
         <app-card-event [id]="event.id" [lieu]="event.lieu" [theme]="event.theme" [id_orga]="event.orga" [name]="event.name" [prix]="event.prix"></app-card-event>

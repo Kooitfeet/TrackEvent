@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {Event} from "../models/event.model";
+import {forkJoin, Observable} from "rxjs";
 import {Orga} from "../models/orga.model";
 
 @Injectable({

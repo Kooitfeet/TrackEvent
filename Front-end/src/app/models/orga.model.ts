@@ -6,5 +6,6 @@ export interface Orga {
   description: string;
   reseaux: string;
   affiche: string;
+  organise: number[];
   pdp: string;
 }

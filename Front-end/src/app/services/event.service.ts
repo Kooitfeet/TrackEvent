@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {forkJoin, Observable} from "rxjs";
 import {Event} from "../models/event.model";
 
 @Injectable({
@@ -13,4 +13,11 @@ export class EventService {
   findAll(): Observable<Event[]> {
     return this.http.get<Event[]>(this.backendUrl + '/events/all');
   }
+
+  findMultipleByIds(ids: number[]): Observable<Event[]> {
+    const observables: Observable<Event>[] = ids.map(id => this.http.get<Event>(this.backendUrl + `/events/id:${id}`));
+
+    return forkJoin(observables);
+  }
+
 }

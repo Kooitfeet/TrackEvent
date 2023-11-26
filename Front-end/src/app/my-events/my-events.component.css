@@ -10,9 +10,7 @@
   transition: background-color 0.3s ease;
 }
 
-.round-button.clicked {
-  background-color: red;
-}
+
 
 .round-button:hover {
   background-color: var(--hover-color);
