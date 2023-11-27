@@ -1,1 +1,30 @@
-<p>add-event works!</p>
+<div class="form-container">
+  <div class="tab-content" id="event-creation-content">
+    <form>
+      <h2>Créer votre évènement</h2>
+
+      <label for="event-name">Nom de l'évènement :</label>
+      <input #eventNameInput type="text" id="event-name" class="input-nav" name="event-name" placeholder="Nom de l'évènement" required>
+
+      <label for="event-theme">Thème :</label>
+      <input #eventThemeInput type="text" id="event-theme" class="input-nav" name="event-theme" placeholder="Thème">
+
+      <label for="event-location">Lieu :</label>
+      <input #eventLocationInput type="text" id="event-location" class="input-nav" name="event-location" placeholder="Lieu">
+
+      <label for="event-date">Date :</label>
+      <input #eventDateInput type="text" id="event-date" class="input-nav" name="event-date" placeholder="dd/mm/yyyy">
+
+      <label for="event-price">Prix :</label>
+      <input #eventPriceInput type="number" id="event-price" class="input-nav" name="event-price" placeholder="Prix">
+
+      <label for="event-description">Description :</label>
+      <input #eventDescriptionInput id="event-description" class="input-nav" name="event-description" placeholder="Description">
+
+      <label for="event-poster">Affiche :</label>
+      <input #eventPosterInput type="text" id="event-poster" class="input-nav" name="event-poster" placeholder="URL de l'affiche">
+
+    </form>
+    <button class="primary-button" (click)="createEvent()">Créer l'évènement</button>
+  </div>
+</div>

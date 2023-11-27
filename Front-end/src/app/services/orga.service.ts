@@ -21,4 +21,8 @@ export class OrgaService {
   findByPseudo = (pseudo: string) => {
     return this.http.get<Public>(this.backendUrl + `/orga/pseudo:${pseudo}`);
   }
+
+  addOrga(profil: Public){
+    return this.http.post<Orga>(this.backendUrl  + '/orga/save', profil);
+  }
 }

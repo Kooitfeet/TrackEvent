@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import {EventService} from "../services/event.service";
+import {ActivatedRoute} from "@angular/router";
+import {Event} from "../models/event.model";
+import format from 'date-fns/format';
+import {fr} from "date-fns/locale";
+import {OrgaService} from "../services/orga.service";
+import {PublicService} from "../services/public.service";
 
 @Component({
   selector: 'app-event-detail',
@@ -6,26 +13,64 @@ import { Component } from '@angular/core';
   styleUrls: ['./event-detail.component.css']
 })
 export class EventDetailComponent {
-  description: String ="░░░░░░░ LINE-UP ░░░░░░\n" +
-    "\n" +
-    "OMAKS\n" +
-    "BAD BOOMBOX\n" +
-    "CAIVA\n" +
-    "LAZE\n" +
-    "25EMEHEURE\n" +
-    "\n" +
-    "░░░░░░ LE SPOT ░░░░░░░\n" +
-    "🎉1500m²\n" +
-    "💥 Soundsystem L-Accoustics\n" +
-    "⚡ Vjing 360 °\n" +
-    "👌Chill zone\n" +
-    "🚬 Fumoir extérieur + Intérieur\n" +
-    "💙 Brigrade Safer\n" +
-    "\n" +
-    "░░░░░░ REMINDER ░░░░░░\n" +
-    "Cet événement est ouvert à toutes et à tous. Cela signifie que tout propos ou comportement violent, misogyne, raciste, homophobe, transphobe... entraînera automatiquement une exclusion.\n" +
-    "On sait qu’il n’est pas toujours facile de trouver rapidement un membre de la sécurité pour dénoncer ce genre de déviances. Pour cela, on a assigné une dizaines de nos bénévoles à vos côtés pour recueillir vos plaintes le plus rapidement possible. Cette équipe “anti mauvaises vibes” sera identifiable grâce aux gilets jaune que nous leur auront fournis. Ils seront disponibles pour vous aider si besoin, n’hésitez surtout pas à aller à leurs rencontres !\n" +
-    "🧡 ENGLISH VERSION 🧡\n" +
-    "This event is open to everyone. This means that any violent, misogynistic, racist, homophobic, transphobic remarks or behavior... will automatically result in exclusion.\n" +
-    "We know that it is not always easy to quickly find a member of the security to denounce this kind of deviance. For this, we have assigned a dozen of our volunteers to your side to collect your complaints as quickly as possible. This “anti bad vibes” team will be identifiable thanks to the yellow vests that we will have provided to them. They will be available to help you if needed, "
+  ID = 0;
+  name='';
+  lieu='';
+  description = '';
+  date='';
+  orga = '';
+  orga_id: number=0;
+  eventsIDs:number[] = [];
+  id_public: number=0;
+  theme='';
+
+
+  constructor(private route: ActivatedRoute, private eventService: EventService, private orgaService: OrgaService, private publicService: PublicService) {
+
+  }
+
+  ngOnInit() {
+    const tempId = localStorage.getItem('id');
+    if(tempId){
+      this.id_public = parseInt(tempId, 10);
+    }
+    this.route.paramMap.subscribe(params => {
+      // @ts-ignore
+      this.ID = +params.get('id');
+      this.eventService.findById(this.ID).subscribe((data) => {
+        this.description = data.description;
+        this.lieu = data.lieu;
+        this.orga_id = data.orga;
+        const date = new Date(data.date.substring(0, 9));
+        const formattedDate = format(date, 'EEEE dd LLLL yyyy', { locale: fr });
+        this.date = formattedDate;
+        this.name = data.name;
+        this.theme = data.theme;
+        this.orgaService.findById(data.orga).subscribe((dataorga) => {
+          this.orga = dataorga.pseudo;
+        });
+      });
+    });
+  }
+
+  ButtonParticipate(event: MouseEvent) {
+    const storedUserId = localStorage.getItem('id');
+    if (storedUserId) {
+      this.id_public = parseInt(storedUserId, 10); // Convertir la chaîne en nombre
+      this.publicService.findById(this.id_public).subscribe((data) => {
+        this.eventsIDs = data.participe;
+        let newListParticipate = this.eventsIDs;
+        console.log(newListParticipate)
+        newListParticipate.push(this.ID);
+        console.log(newListParticipate)
+        this.publicService.updateListParticipe(this.id_public, newListParticipate).subscribe((data) => {
+          console.log("Ajout participe");
+          this.eventsIDs = newListParticipate;
+        });
+      });
+    }
+
+
+  }
 }
+

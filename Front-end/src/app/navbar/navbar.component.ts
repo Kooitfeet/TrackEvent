@@ -17,8 +17,9 @@ export class NavbarComponent {
     this.connexionService.isConnected.subscribe((isConnected) => {
       this.isConnected = isConnected;
       if (isConnected) {
-        this.username = this.connexionService.username;
         this.orga = this.connexionService.orga;
+        console.log(this.orga)
+        this.username = this.connexionService.username;
       }
     });
   }
@@ -26,6 +27,7 @@ export class NavbarComponent {
   Logout(){
     this.connexionService.Logout();
     this.username="";
+    this.orga = false;
     this.router.navigate(['/']);
 
   }

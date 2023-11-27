@@ -13,6 +13,7 @@ p{
   display: block;
   margin: auto;
   margin-top: 3rem;
+  margin-bottom: 2rem;
   width: 60rem;
   max-width: var(--max-width);
   height: auto;
@@ -31,6 +32,7 @@ p{
   font-family: font-logo;
   font-size: 3rem;
   letter-spacing: 2px;
+  margin-bottom: 1rem;
 }
 
 .title{
@@ -40,6 +42,7 @@ p{
 }
 
 .event-description{
+  margin-top: 1rem;
 }
 
 .event-information{
@@ -60,3 +63,36 @@ p{
 .rounded {
   border-radius: 15px;
 }
+
+.round-button {
+  background-color: var(--second-color);
+  border: none;
+  border-radius: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.round-button:hover {
+  background-color: var(--hover-color);
+  transition-duration: 0.4s;
+}
+
+.music-card {
+  display:inline-block;
+  border-radius: 15px;
+  text-align: center;
+  border: solid 2px rgb(170, 170, 170);
+  padding: 5px 10px;
+  margin-top: 0px;
+  margin-bottom:0px;
+}
+
+

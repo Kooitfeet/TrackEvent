@@ -2,6 +2,9 @@ package com.example.BackEnd.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "events")
@@ -24,8 +27,10 @@ public class Event {
         @JsonProperty("lieu")
         private String lieu;
         @JsonProperty("date")
-        private String date;
-        @JsonProperty("description")
+        @DateTimeFormat(pattern = "yyyy-MM-dd")
+        private Date date;
+
+    @JsonProperty("description")
         private String description;
         @JsonProperty("affiche")
         private String affiche;
@@ -43,7 +48,7 @@ public class Event {
         public void setLieu(String lieu) {
             this.lieu = lieu;
         }
-        public void setDate(String date) {
+        public void setDate(Date date) {
             this.date = date;
         }
         public void setId_orga(int id_orga) {
@@ -64,7 +69,7 @@ public class Event {
 
 
         // Constructor
-        public Event(Long id, int id_orga, int id_part, String theme, String lieu, String date, String affiche, String description, int prix) {
+        public Event(Long id, int id_orga, int id_part, String theme, String lieu, Date date, String affiche, String description, int prix) {
             this.id = id;
             this.id_orga = id_orga;
             this.theme = theme;

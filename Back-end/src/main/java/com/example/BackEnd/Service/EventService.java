@@ -27,7 +27,7 @@ public class EventService {
     public void deleteEventById(Long id){
         eventDao.deleteById(id);
     }
-    public void saveEvent(Event event){
-        eventDao.save(event);
+    public Event saveEvent(Event event){
+        return eventDao.save(event);
     }
 }

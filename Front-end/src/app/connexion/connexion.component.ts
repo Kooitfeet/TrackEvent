@@ -14,16 +14,6 @@ export class ConnexionComponent {
   isPublicRegister = true;
   @ViewChild('loginUsernameInput') loginUsernameInput!: ElementRef;
 
-  publicUser: Public = {
-    pseudo: 'Collectif77',
-    mail: 'Collectif77@orange.fr',
-    score: 0,
-    inter: [],
-    participe: [],
-    avis: 0,
-    pdp: '',
-  }
-
   constructor(private router: Router, private connexionService : ConnexionService, private publicService : PublicService) {
   }
   toggleTab(arg: String) {
@@ -46,7 +36,18 @@ export class ConnexionComponent {
 
   Register(){
     if (this.isPublicRegister) {
-      this.publicService.addPublic(this.publicUser).subscribe(response => {
+
+      let publicUser = {
+        pseudo: 'Collectif77',
+        mail: 'Collectif77@orange.fr',
+        score: 0,
+        inter: [],
+        participe: [],
+        avis: 0,
+        pdp: '',
+      }
+
+      this.publicService.addPublic(publicUser).subscribe(response => {
         console.log('Utilisateur public créé avec succès');
       });
     } else {

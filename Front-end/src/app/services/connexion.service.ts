@@ -50,12 +50,13 @@ export class ConnexionService {
     this.orgaService.findByPseudo(value).subscribe((data) => {
       console.log(data);
       if(data.id){
+        this._orga = true;
+        this._username = value;
       localStorage.setItem('id', (data.id).toString());
-      this._username = value;
       localStorage.setItem('username', value);
       this.isLoggedIn.next(true);
       localStorage.setItem('orga', 'true');
-      this._orga = true;
+
     }
     });
   }

@@ -42,7 +42,7 @@ public class EventController {
     }
 
     @PostMapping(value = "/events/save", produces = "application/json")
-    public void saveEventById(@ModelAttribute Event event){
-        eventService.saveEvent(event);
+    public Event saveEvent(@RequestBody Event event){
+        return eventService.saveEvent(event);
     }
 }
