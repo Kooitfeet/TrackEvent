@@ -1,0 +1,16 @@
+<div class="navbar">
+  <a class="app-name" routerLink="">TrackEvent</a>
+  <div class="user-input">
+    <input type="text" id="user-input" class="input-nav" placeholder="Rechercher...">
+  </div>
+  <nav>
+    <ul>
+      <li *ngIf="orga == true"><a routerLink="addevent">Créer un évènement</a></li>
+      <li *ngIf="username !== ''"><a routerLink="myevents">Mes Events</a></li>
+      <li *ngIf="username == ''"><a class = "active" routerLink="connexion">Connexion / Inscription</a></li>
+
+      <li *ngIf="username !== ''"><a class = "active">Bienvenue {{username}} !</a></li>
+      <li *ngIf="username !== ''" ><a class="logout" (click)="Logout()">Déconnexion</a></li>
+    </ul>
+  </nav>
+</div>

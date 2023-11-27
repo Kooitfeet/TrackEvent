@@ -1,0 +1,62 @@
+<div class="form-container">
+  <div class="tabs">
+    <button class="tab-button primary-button" id="login-tab" (click)="toggleTab('login')">Connexion</button>
+    <button class="tab-button primary-button" id="register-tab" (click)="toggleTab('register')">S'inscrire</button>
+  </div>
+  <div class="tab-content" id="login-content" *ngIf="isLoginTab">
+    <form>
+    <h2>Connexion</h2>
+
+    <label for="login-username">Nom d'utilisateur :</label>
+    <input #loginUsernameInput type="text" id="login-username" class="input-nav" name="login-username" placeholder="Nom d'utilisateur" required>
+
+    <label for="login-password">Mot de passe :</label>
+    <input type="password" id="login-password" class="input-nav" name="login-password" placeholder="Mot de passe" required>
+
+    <button class="primary-button" (click)="Login()">Se connecter</button>
+  </form>
+
+  </div>
+  <div class="tab-content" id="register-content" *ngIf="!isLoginTab">
+    <form>
+      <h2>Inscription</h2>
+
+      <label for="register-username">Nom d'utilisateur :</label>
+      <input type="text" id="register-username" class="input-nav" name="register-username" placeholder="Nom d'utilisateur" required>
+
+      <label for="login-password">Mot de passe :</label>
+      <input type="password" id="register-password" class="input-nav" name="register-password" placeholder="Mot de passe" required>
+
+      <label for="register-mail">Mail :</label>
+      <input type="email" id="register-mail" class="input-nav" name="register-mail" placeholder="Mail" required>
+
+      <div class="tabs">
+        <button class="tab-button primary-button" id="public-tab" (click)="changeType('public')">Utilisateur</button>
+        <button class="tab-button primary-button" id="orga-tab" (click)="changeType('orga')">Organisateur</button>
+      </div>
+      <div *ngIf="!isPublicRegister">
+
+      <label for="register-entreprise">Entreprise :</label>
+      <input type="text" id="register-entreprise" class="input-nav" name="register-entreprise" placeholder="Entreprise" required>
+
+      <label for="register-description">Description :</label>
+      <input id="register-description" class="input-nav" name="register-description" placeholder="Description" >
+
+      <label for="register-reseaux">Réseaux :</label>
+      <input type="text" id="register-reseaux" class="input-nav" name="register-reseaux" placeholder="Réseaux">
+
+      <label for="register-affiche">Affiche :</label>
+      <input type="text" id="register-affiche" class="input-nav" name="register-affiche" placeholder="Affiche">
+
+      <label for="register-pdp">Photo de profil :</label>
+      <input type="text" id="register-pdp" class="input-nav" name="register-pdp" placeholder="Photo de profil">
+
+      </div>
+
+      <button class="primary-button" (click)="Register()">S'inscrire</button>
+
+    </form>
+  </div>
+
+
+

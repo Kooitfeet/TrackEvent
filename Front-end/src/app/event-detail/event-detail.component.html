@@ -1,0 +1,17 @@
+<div class="event-detail-content">
+<img class= "resize rounded" src="../assets/posters/organik-affiche.jpg" alt="Affiche">
+  <button class="round-button" (click)="ButtonParticipate($event)">Je participe </button>
+  <p class="event-title center">{{name}}</p>
+  <div class="card rounded">
+  <p class="event-information">Lieu: {{lieu}}</p>
+    <br>
+  <p class="event-information">Organisateur: <a class="event-planner" [routerLink]="['/organizer', orga_id]">{{orga}}</a></p>
+    <br>
+  <p class="date uppercase">Date: {{date}}</p>
+    <br>
+    <p class="music-card">{{theme}}</p>
+  </div>
+  <p class="title">Description</p>
+  <div></div>
+  <p class="event-description center">{{description}}</p>
+</div>
