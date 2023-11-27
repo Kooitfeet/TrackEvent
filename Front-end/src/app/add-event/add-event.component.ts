@@ -27,19 +27,37 @@ export class AddEventComponent {
     if(orga_id) {
       this.orgaId = parseInt(orga_id, 10);
 
-      const newEvent = {
-        id_orga: 4,
-        prix: 10,
-        theme: "Pop",
-        name: "Solidays ",
-        lieu: "Paris",
-        date: '2023-07-04',
-        description: "Festival",
-        affiche: "images/affiche/image01.png"
+      let newEvent = {
+        orga: this.orgaId,
+        prix: 0,
+        theme: "Techno",
+        name: " ",
+        lieu: "",
+        date: '2024-07-04',
+        description: "",
+        affiche: "../assets/posters/organik-affiche.jpg"
       };
+
+      const eventName = (document.getElementById('event-name') as HTMLInputElement).value;
+      const eventTheme = (document.getElementById('event-theme') as HTMLInputElement).value;
+      const eventLocation = (document.getElementById('event-location') as HTMLInputElement).value;
+      const eventDate = (document.getElementById('event-date') as HTMLInputElement).value;
+      const eventPrice = (document.getElementById('event-price') as HTMLInputElement).value;
+      const eventDescription = (document.getElementById('event-description') as HTMLInputElement).value;
+      const eventPoster = (document.getElementById('event-poster') as HTMLInputElement).value;
+
+      newEvent.name = eventName;
+      newEvent.theme = eventTheme;
+      newEvent.lieu = eventLocation;
+      newEvent.date = eventDate;
+      newEvent.prix = parseInt(eventPrice, 10);
+      newEvent.description = eventDescription;
+
+      console.log(newEvent);
 
       this.eventService.addEvent(newEvent).subscribe(response => {
         console.log("event créé avec succès");
+
       });
     } else {
       console.log('A voir ensuite');

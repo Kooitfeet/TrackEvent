@@ -38,14 +38,20 @@ export class ConnexionComponent {
     if (this.isPublicRegister) {
 
       let publicUser = {
-        pseudo: 'Collectif77',
-        mail: 'Collectif77@orange.fr',
+        pseudo: '',
+        mail: '',
         score: 0,
         inter: [],
         participe: [],
         avis: 0,
         pdp: '',
       }
+
+      const username = (document.getElementById('register-username') as HTMLInputElement).value;
+      const mail = (document.getElementById('register-mail') as HTMLInputElement).value;
+
+      publicUser.pseudo = username;
+      publicUser.mail = mail;
 
       this.publicService.addPublic(publicUser).subscribe(response => {
         console.log('Utilisateur public créé avec succès');

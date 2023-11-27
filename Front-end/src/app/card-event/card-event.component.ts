@@ -23,8 +23,10 @@ export class CardEventComponent {
 
   constructor(private orgaService: OrgaService) {}
   ngOnInit(): void {
-    this.orgaService.findById(this.id).subscribe((data) => {
+    this.orgaService.findById(this.id_orga).subscribe((data) => {
+      console.log(this.id_orga);
       this.name_orga = data.pseudo;
+
     });
   }
 }
